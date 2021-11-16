@@ -16,6 +16,6 @@ app.get('/',(req,res)=>{
 });
 
 app.use('/messages',messageRoutes);
-app.use('/auth', authRoutes)
+app.use('/auth', authRoutes);
 
 export default app;
