@@ -1,6 +1,7 @@
 import express from 'express';
 import morgan from 'morgan';
 import messageRoutes from './routes/message.routes';
+import './database'
 
 const app = express();
 
