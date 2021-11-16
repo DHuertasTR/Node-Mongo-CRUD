@@ -1,6 +1,7 @@
 import express from 'express';
 import morgan from 'morgan';
 import messageRoutes from './routes/message.routes';
+import authRoutes from './routes/auth.routes'
 import './database'
 
 const app = express();
@@ -15,5 +16,6 @@ app.get('/',(req,res)=>{
 });
 
 app.use('/messages',messageRoutes);
+app.use('/auth', authRoutes)
 
 export default app;
