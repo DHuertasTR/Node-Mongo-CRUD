@@ -1,5 +1,6 @@
 import {Router} from 'express';
 import * as messageController from '../controllers/message.controller';
+import Product from '../models/Message';
 
 const router = Router();
 
