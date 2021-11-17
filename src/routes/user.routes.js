@@ -1,9 +1,9 @@
 import {Router} from 'express';
 import * as userC from '../controllers/user.controller'
-import {authJwt} from '../middlewares'
+import {authJwt,verifySignup} from '../middlewares'
 
 const router = Router();
 
-router.post('/',[authJwt.verifyToken,authJwt.isAdmin],userC.createUser)
+router.post('/',[authJwt.verifyToken,authJwt.isAdmin,verifySignup.checkRolesExists],userC.createUser)
 
 export default router;
