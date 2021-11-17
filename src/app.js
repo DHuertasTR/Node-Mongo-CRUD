@@ -2,6 +2,7 @@ import express from 'express';
 import morgan from 'morgan';
 import messageRoutes from './routes/message.routes';
 import authRoutes from './routes/auth.routes'
+import userRoutes from './routes/user.routes'
 import './database'
 import {createRoles} from './libs/initialSetup'
 
@@ -19,5 +20,6 @@ app.get('/',(req,res)=>{
 
 app.use('/messages',messageRoutes);
 app.use('/auth', authRoutes);
+app.use('/users',userRoutes)
 
 export default app;
