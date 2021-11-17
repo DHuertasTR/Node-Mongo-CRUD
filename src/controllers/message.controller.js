@@ -26,5 +26,13 @@ export const updateMessageById = async (req, res) => {
     await Message.findByIdAndUpdate(id, req.body, {new:true})
     res.status(200).json(Message)
 }
-export const deleteMessageById = (req, res) => {
+export const deleteMessageById = async (req, res) => {
+    const id = req.params.messageId;
+    await Message.findByIdAndDelete(id)
+    .then(message => {
+        res.json(message)
+    })
+    .catch(err => {
+        res.json(err)
+    })
 }
