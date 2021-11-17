@@ -11,7 +11,15 @@ export const getMessages = async(req, res) => {
     const messagesPromise = await Message.find();
     res.json(messagesPromise)
 }
-export const getMessageById = (req, res) => {
+export const getMessageById = async (req, res) => {
+    const id = req.params.messageId;
+    await Message.findById(id)
+    .then(message => {
+        res.json(message)
+    })
+    .catch(err => {
+        res.json(err)
+    })
 }
 export const updateMessageById = (req, res) => {
 }
