@@ -3,8 +3,10 @@ import morgan from 'morgan';
 import messageRoutes from './routes/message.routes';
 import authRoutes from './routes/auth.routes'
 import './database'
+import {createRoles} from './libs/initialSetup'
 
 const app = express();
+createRoles();
 
 app.use(express.json())
 app.use(morgan('dev'));
